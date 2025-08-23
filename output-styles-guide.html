@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Code Output Styles - Retro Terminal Blog</title>
+    <style>
+        body {
+            font-family: 'Courier New', Monaco, Consolas, monospace;
+            background-color: #1a1a1a;
+            color: #00ff00;
+            padding: 20px;
+            line-height: 1.4;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .ascii-banner {
+            text-align: center;
+            color: #ffff00;
+            text-shadow: 0 0 10px #ffff00;
+            margin-bottom: 30px;
+        }
+        .ascii-divider {
+            color: #00ffff;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .section {
+            border: 2px solid #00ff00;
+            padding: 15px;
+            margin: 20px 0;
+            background-color: #2d2d2d;
+        }
+        .section-header {
+            color: #ff6600;
+            text-decoration: underline;
+            margin-bottom: 10px;
+        }
+        .code-block {
+            background-color: #000000;
+            border: 1px solid #00ff00;
+            padding: 10px;
+            margin: 10px 0;
+            color: #ffffff;
+        }
+        .highlight {
+            color: #ffff00;
+            font-weight: bold;
+        }
+        .footer {
+            text-align: center;
+            color: #888888;
+            margin-top: 40px;
+            border-top: 2px solid #444444;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="ascii-banner">
+            <pre>
+╔═══════════════════════════════════════════════════════════════════╗
+║                                                                   ║
+║  ╔═══╗ ╔╗    ╔══╗ ╔╗ ╔╗ ╔══╗ ╔═══╗    ╔══╗ ╔══╗ ╔══╗ ╔═══╗      ║
+║  ║╔══╝ ║║    ║╔╗║ ║║ ║║ ║╔╗║ ║╔══╝    ║╔═╝ ║╔╗║ ║╔╗║ ║╔══╝      ║
+║  ║║    ║║    ║╚╝║ ║║ ║║ ║╚╝║ ║╚══╗    ║║   ║║║║ ║║║║ ║╚══╗      ║
+║  ║║    ║║    ║╔╗║ ║║ ║║ ║╔╗║ ║╔══╝    ║║   ║║║║ ║║║║ ║╔══╝      ║
+║  ║╚══╗ ║╚══╗ ║║║║ ║╚═╝║ ║║║║ ║╚══╗    ║╚═╗ ║╚╝║ ║╚╝║ ║╚══╗      ║
+║  ╚═══╝ ╚═══╝ ╚╝╚╝ ╚═══╝ ╚╝╚╝ ╚═══╝    ╚══╝ ╚══╝ ╚══╝ ╚═══╝      ║
+║                                                                   ║
+║                      OUTPUT STYLES GUIDE                         ║
+╚═══════════════════════════════════════════════════════════════════╝
+            </pre>
+        </header>
+
+        <main>
+            <div class="ascii-divider">
+                <pre>
+═══════════════════════════════════════════════════════════════════════
+                      ★ WHAT ARE OUTPUT STYLES? ★
+═══════════════════════════════════════════════════════════════════════
+                </pre>
+            </div>
+
+            <section class="section">
+                <h2 class="section-header">► Definition & Purpose</h2>
+                <p>Output styles are <span class="highlight">custom response formatting configurations</span> for Claude Code CLI that control how Claude communicates and structures responses. Think of them as personality templates that modify Claude's behavior, tone, and presentation style.</p>
+            </section>
+
+            <section class="section">
+                <h2 class="section-header">► How They Work</h2>
+                <div class="code-block">
+                    System Prompt Modification:
+                    ┌─────────────────────────────────────┐
+                    │ Base Claude Prompt + Output Style  │
+                    │ Instructions = Modified Behavior    │
+                    └─────────────────────────────────────┘
+                </div>
+                <p>Each style appends specific instructions to Claude's system prompt, fundamentally changing how responses are structured and delivered.</p>
+            </section>
+
+            <section class="section">
+                <h2 class="section-header">► File Structure & Location</h2>
+                <div class="code-block">
+Global Styles:     ~/.claude/output-styles/
+Project Styles:    {project}/.claude/output-styles/
+
+Format:            Markdown with YAML frontmatter
+Required Fields:   description (in frontmatter)
+Precedence:        Project > Global
+                </div>
+            </section>
+
+            <div class="ascii-divider">
+                <pre>
+════════════════════════════════════════════════════════════════════
+                    ★ YOUR CURRENT OUTPUT STYLES ★
+════════════════════════════════════════════════════════════════════
+                </pre>
+            </div>
+
+            <section class="section">
+                <h2 class="section-header">► Available Styles in Your Environment</h2>
+                
+                <div class="code-block">
+╔══════════════════╦═══════════════════════════════════════════════╗
+║ STYLE NAME       ║ DESCRIPTION                                   ║
+╠══════════════════╬═══════════════════════════════════════════════╣
+║ default          ║ Standard Claude behavior                      ║
+║ minimal-bullets  ║ Concise bullet-point responses, no fluff     ║
+║ yaml-concise     ║ YAML-structured minimal responses            ║
+║ retro-ascii-blog ║ HTML pages with ASCII art blog styling       ║
+╚══════════════════╩═══════════════════════════════════════════════╝
+
+Current Active: [retro-ascii-blog] ★
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-header">► Command Reference</h2>
+                <div class="code-block">
+/output-style              → List available styles
+/output-style {name}       → Switch to specific style  
+/output-style:new          → Create new style
+                </div>
+            </section>
+
+            <div class="ascii-divider">
+                <pre>
+════════════════════════════════════════════════════════════════════
+                      ★ TECHNICAL DETAILS ★
+════════════════════════════════════════════════════════════════════
+                </pre>
+            </div>
+
+            <section class="section">
+                <h2 class="section-header">► Style Capabilities</h2>
+                <ul>
+                    <li><span class="highlight">Response Format:</span> Control structure (bullets, YAML, HTML, prose)</li>
+                    <li><span class="highlight">Communication Tone:</span> Formal, casual, technical, educational</li>
+                    <li><span class="highlight">Information Density:</span> Concise, detailed, comprehensive</li>
+                    <li><span class="highlight">Task Approach:</span> Speed vs thoroughness balance</li>
+                    <li><span class="highlight">Code Style:</span> Preferences for code formatting and comments</li>
+                    <li><span class="highlight">Workflow Behaviors:</span> Tool usage patterns and step sequences</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section-header">► Benefits & Use Cases</h2>
+                <div class="code-block">
+┌─ CONSISTENCY ────────────────────────────────────────┐
+│ • Standardized response format across sessions      │
+│ • Predictable communication style                   │
+└──────────────────────────────────────────────────────┘
+
+┌─ EFFICIENCY ─────────────────────────────────────────┐
+│ • Tailored responses for specific workflows          │
+│ • Reduced cognitive load from consistent formatting  │
+└──────────────────────────────────────────────────────┘
+
+┌─ TEAM ALIGNMENT ─────────────────────────────────────┐
+│ • Shared project-level styles                       │
+│ • Consistent experience across team members         │
+└──────────────────────────────────────────────────────┘
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="ascii-divider">
+                <pre>
+═══════════════════════════════════════════════════════════════════
+            ★ End of Output Styles Documentation ★
+         Generated by Claude Code with retro-ascii-blog style
+═══════════════════════════════════════════════════════════════════
+                </pre>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

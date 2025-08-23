@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Code Output Styles - Terminal Guide</title>
+    <style>
+        body {
+            font-family: 'Courier New', Monaco, Consolas, monospace;
+            background-color: #1a1a1a;
+            color: #00ff00;
+            padding: 20px;
+            line-height: 1.4;
+            margin: 0;
+            text-shadow: 0 0 5px #00ff00;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .ascii-banner {
+            text-align: center;
+            color: #ffff00;
+            text-shadow: 0 0 15px #ffff00;
+            margin-bottom: 30px;
+            background-color: #000;
+            border: 2px solid #ffff00;
+            padding: 10px;
+        }
+        .ascii-divider {
+            color: #00ffff;
+            text-align: center;
+            margin: 20px 0;
+            text-shadow: 0 0 10px #00ffff;
+        }
+        .section {
+            border: 2px solid #00ff00;
+            padding: 20px;
+            margin: 20px 0;
+            background-color: #2d2d2d;
+            box-shadow: 0 0 20px rgba(0,255,0,0.3);
+        }
+        .section-header {
+            color: #ff6600;
+            text-decoration: underline;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            text-shadow: 0 0 8px #ff6600;
+        }
+        .code-block {
+            background-color: #000000;
+            border: 1px solid #00ff00;
+            padding: 15px;
+            margin: 15px 0;
+            color: #ffffff;
+            font-size: 0.9em;
+        }
+        .highlight {
+            color: #ffff00;
+            font-weight: bold;
+            text-shadow: 0 0 5px #ffff00;
+        }
+        .footer {
+            text-align: center;
+            color: #888888;
+            margin-top: 40px;
+            border-top: 2px solid #444444;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="ascii-banner">
+            <pre>
+╔═══════════════════════════════════════════════════════════════════╗
+║                                                                   ║
+║   ╔═══╗ ╔╗ ╔╗ ╔════╗ ╔═══╗ ╔╗ ╔╗ ╔════╗   ╔═══╗ ╔════╗ ╔╗ ╔╗    ║
+║   ║╔═╗║ ║║ ║║ ║╔╗╔╗║ ║╔═╗║ ║║ ║║ ║╔╗╔╗║   ║╔═╗║ ║╔╗╔╗║ ║╚╗║║    ║
+║   ║║ ║║ ║║ ║║ ╚╝║║╚╝ ║╚═╝║ ║║ ║║ ╚╝║║╚╝   ║╚══╗ ╚╝║║╚╝ ║╔╗╚╝║    ║
+║   ║║ ║║ ║║ ║║   ║║   ║╔══╝ ║║ ║║   ║║     ╚══╗║   ║║   ║║╚╗║║    ║
+║   ║╚═╝║ ║╚═╝║   ║║   ║║    ║╚═╝║   ║║     ║╚═╝║   ║║   ║║ ║║║    ║
+║   ╚═══╝ ╚═══╝   ╚╝   ╚╝    ╚═══╝   ╚╝     ╚═══╝   ╚╝   ╚╝ ╚═╝    ║
+║                                                                   ║
+║                   S T Y L E S   G U I D E                         ║
+╚═══════════════════════════════════════════════════════════════════╝
+            </pre>
+        </header>
+
+        <main>
+            <div class="ascii-divider">
+                <pre>
+═════════════════════════════════════════════════════════════════════
+                        ★ WHAT ARE THEY? ★
+═════════════════════════════════════════════════════════════════════
+                </pre>
+            </div>
+
+            <section class="section">
+                <h2 class="section-header">► Quick Definition</h2>
+                <p>Output styles are <span class="highlight">response templates</span> that control how Claude formats and delivers answers in Claude Code CLI. They're like switching between different AI personalities or communication modes.</p>
+            </section>
+
+            <section class="section">
+                <h2 class="section-header">► Core Concept</h2>
+                <div class="code-block">
+┌──────────────────────────────────────────────────────┐
+│  Standard Claude + Output Style = Modified Behavior  │
+│                                                      │
+│  Examples:                                           │
+│  • Claude + "minimal-bullets" = Bullet point lists  │
+│  • Claude + "yaml-concise" = YAML structured data   │
+│  • Claude + "retro-ascii-blog" = HTML with ASCII    │
+└──────────────────────────────────────────────────────┘
+                </div>
+            </section>
+
+            <div class="ascii-divider">
+                <pre>
+═════════════════════════════════════════════════════════════════════
+                      ★ HOW THEY WORK ★
+═════════════════════════════════════════════════════════════════════
+                </pre>
+            </div>
+
+            <section class="section">
+                <h2 class="section-header">► Technical Mechanism</h2>
+                <p>Each style is a <span class="highlight">markdown file</span> containing instructions that get appended to Claude's system prompt. This modifies behavior at the AI model level.</p>
+                
+                <div class="code-block">
+File Structure:
+├── ~/.claude/output-styles/        (Global styles)
+└── project/.claude/output-styles/  (Project styles)
+
+Format: Markdown with YAML frontmatter
+Required: description field in frontmatter
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-header">► Available Commands</h2>
+                <div class="code-block">
+╔════════════════════╦══════════════════════════════════════╗
+║ COMMAND            ║ FUNCTION                             ║
+╠════════════════════╬══════════════════════════════════════╣
+║ /output-style      ║ List all available styles           ║
+║ /output-style name ║ Switch to specific style            ║
+║ /output-style:new  ║ Create new custom style             ║
+╚════════════════════╩══════════════════════════════════════╝
+                </div>
+            </section>
+
+            <div class="ascii-divider">
+                <pre>
+═════════════════════════════════════════════════════════════════════
+                     ★ YOUR CURRENT SETUP ★
+═════════════════════════════════════════════════════════════════════
+                </pre>
+            </div>
+
+            <section class="section">
+                <h2 class="section-header">► Currently Active Style</h2>
+                <div class="code-block">
+Active: <span style="color: #ffff00;">retro-ascii-blog</span> ★
+
+Description: Format responses as retro HTML pages 
+            with ASCII art styling like vintage blog
+
+Location: .claude/output-styles/retro-ascii-blog.md
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-header">► All Your Available Styles</h2>
+                <div class="code-block">
+• default          → Standard Claude behavior
+• minimal-bullets  → Concise bullet points, no fluff  
+• yaml-concise     → YAML structured responses
+• retro-ascii-blog → HTML pages with ASCII art [ACTIVE]
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="ascii-divider">
+                <pre>
+┌─────────────────────────────────────────────────────────────────┐
+│                    ★ End Transmission ★                        │
+│         Generated with retro-ascii-blog output style           │
+└─────────────────────────────────────────────────────────────────┘
+                </pre>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
