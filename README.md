@@ -3,7 +3,7 @@
 
 [![Twitter Follow](https://img.shields.io/twitter/follow/EdenMarco177?style=social)](https://twitter.com/EdenMarco177)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-[![Udemy Course](https://img.shields.io/badge/Claude%20Code%20Udemy%20Course-Coupon%20%2412.99-brightgreen)](https://www.udemy.com/course/claudecode/?referralCode=AUGUST-2025)
+[![Udemy Course](https://img.shields.io/badge/Claude%20Code%20Udemy%20Course-Coupon%20%2412.99-brightgreen)](https://www.udemy.com/course/claudecode/?referralCode=OCT-2025)
 
 Welcome to the Claude Code Crash Course! This repository is designed to teach you the fundamentals and advanced concepts of Claude Code, Anthropic's official CLI for AI-powered software development, in a hands-on way.
 
