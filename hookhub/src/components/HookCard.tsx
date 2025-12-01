@@ -27,7 +27,7 @@ export default function HookCard({ hook }: HookCardProps) {
   const categoryStyle = categoryStyles[hook.category] || { bg: 'bg-slate-500/10', text: 'text-slate-600' };
 
   return (
-    <div className="group bg-[var(--background)] border border-[var(--border)] rounded-xl p-5 hover:border-[#d97757]/40 hover:shadow-lg hover:shadow-[#d97757]/5 transition-all duration-200">
+    <div className="group bg-[var(--background)] border border-[var(--border)] rounded-xl p-5 hover:border-[#d97757]/40 hover:shadow-lg hover:shadow-[#d97757]/5 transition-all duration-300 hover:-translate-y-1">
       <div className="flex items-start justify-between gap-3 mb-3">
         <h3 className="text-base font-semibold text-[var(--foreground)] leading-snug">
           {hook.name}
