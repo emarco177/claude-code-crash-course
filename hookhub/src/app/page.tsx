@@ -14,7 +14,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between gap-6">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-[#d97757] flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-[#d97757] flex items-center justify-center animate-float">
                 <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                 </svg>
@@ -51,18 +51,18 @@ export default function Home() {
         {/* Hero Section */}
         <section className="py-20 md:py-28">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-[var(--foreground)] mb-6 leading-[1.1] tracking-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-[var(--foreground)] mb-6 leading-[1.1] tracking-tight animate-fade-in-up">
               Extend Claude Code with
               <span className="text-[#d97757]"> powerful hooks</span>
             </h1>
-            <p className="text-lg md:text-xl text-[var(--slate-light)] mb-10 leading-relaxed max-w-2xl">
+            <p className="text-lg md:text-xl text-[var(--slate-light)] mb-10 leading-relaxed max-w-2xl animate-fade-in-up stagger-1 opacity-0">
               Discover community-driven hooks that enhance your AI-powered development workflows. Automate, validate, and customize how Claude Code works for you.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <button className="px-6 py-3 bg-[#d97757] hover:bg-[#c4684a] text-white font-medium rounded-xl transition-colors duration-200">
+            <div className="flex flex-wrap gap-4 animate-fade-in-up stagger-2 opacity-0">
+              <button className="px-6 py-3 bg-[#d97757] hover:bg-[#c4684a] text-white font-medium rounded-xl transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-[#d97757]/25 animate-pulse-glow">
                 Browse Hooks
               </button>
-              <button className="px-6 py-3 border border-[var(--border)] hover:border-[var(--slate-light)] text-[var(--foreground)] font-medium rounded-xl transition-colors duration-200">
+              <button className="px-6 py-3 border border-[var(--border)] hover:border-[var(--slate-light)] text-[var(--foreground)] font-medium rounded-xl transition-all duration-200 hover:scale-105">
                 Submit a Hook
               </button>
             </div>
@@ -72,15 +72,17 @@ export default function Home() {
         {/* Featured Hooks */}
         {featuredHooks.length > 0 && (
           <section className="pb-16">
-            <div className="flex items-center gap-3 mb-8">
+            <div className="flex items-center gap-3 mb-8 animate-slide-in-left stagger-3 opacity-0">
               <div className="w-1 h-6 bg-[#d97757] rounded-full"></div>
               <h2 className="text-xl font-semibold text-[var(--foreground)]">
                 Featured
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {featuredHooks.map((hook) => (
-                <HookCard key={hook.id} hook={hook} />
+              {featuredHooks.map((hook, index) => (
+                <div key={hook.id} className={`animate-fade-in-up opacity-0 stagger-${Math.min(index + 4, 6)}`}>
+                  <HookCard hook={hook} />
+                </div>
               ))}
             </div>
           </section>
@@ -88,15 +90,17 @@ export default function Home() {
 
         {/* All Hooks */}
         <section className="pb-20">
-          <div className="flex items-center gap-3 mb-8">
+          <div className="flex items-center gap-3 mb-8 animate-slide-in-left stagger-5 opacity-0">
             <div className="w-1 h-6 bg-[var(--slate-light)] rounded-full"></div>
             <h2 className="text-xl font-semibold text-[var(--foreground)]">
               All Hooks
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {regularHooks.map((hook) => (
-              <HookCard key={hook.id} hook={hook} />
+            {regularHooks.map((hook, index) => (
+              <div key={hook.id} className={`animate-fade-in-up opacity-0`} style={{ animationDelay: `${0.6 + index * 0.1}s` }}>
+                <HookCard hook={hook} />
+              </div>
             ))}
           </div>
         </section>
