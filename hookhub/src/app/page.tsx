@@ -1,4 +1,5 @@
 import HookCard from '@/components/HookCard';
+import Footer from '@/components/Footer';
 import { Hook } from '@/types/hook';
 import hooksData from '@/data/hooks.json';
 
@@ -248,18 +249,7 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-[var(--border)] py-8">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-[var(--slate-light)]">
-            <p>Built for the Claude Code community</p>
-            <div className="flex items-center gap-6">
-              <a href="#" className="hover:text-[var(--foreground)] transition-colors">Documentation</a>
-              <a href="#" className="hover:text-[var(--foreground)] transition-colors">Contribute</a>
-              <a href="#" className="hover:text-[var(--foreground)] transition-colors">About</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
