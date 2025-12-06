@@ -79,25 +79,30 @@ if [ -z "$1" ]; then
     COMMIT_TYPE=$(determine_commit_type "$STAGED_FILES")
     SCOPE=$(determine_scope "$STAGED_FILES")
 
-    # Count files changed
-    NUM_FILES=$(echo "$STAGED_FILES" | wc -l | xargs)
+    # Get the diff for context
+    DIFF_CONTENT=$(git diff --cached)
 
-    # Generate description based on changes
-    if [ "$COMMIT_TYPE" = "docs" ]; then
-        DESCRIPTION="update documentation"
-    elif [ "$COMMIT_TYPE" = "test" ]; then
-        DESCRIPTION="update tests"
-    elif [ "$COMMIT_TYPE" = "chore" ]; then
-        DESCRIPTION="update dependencies"
-    else
-        DESCRIPTION="update $NUM_FILES file(s)"
-    fi
+    # Use Claude CLI to generate a pirate-style commit message
+    info "Arrr! Asking Claude to write a pirate commit message..."
+    PIRATE_MSG=$(claude -p "You are a pirate! Based on this git diff, write a short conventional commit message (type(scope): description) but make the description sound like a pirate talking. Keep it under 72 chars. Only output the commit message, nothing else.
 
-    # Build commit message
-    if [ -n "$SCOPE" ]; then
-        COMMIT_MSG="${COMMIT_TYPE}(${SCOPE}): ${DESCRIPTION}"
+Commit type: $COMMIT_TYPE
+Scope: $SCOPE
+Files changed: $STAGED_FILES
+
+Diff:
+$DIFF_CONTENT" 2>/dev/null || echo "")
+
+    if [ -n "$PIRATE_MSG" ]; then
+        COMMIT_MSG="$PIRATE_MSG"
     else
-        COMMIT_MSG="${COMMIT_TYPE}: ${DESCRIPTION}"
+        # Fallback if Claude CLI fails
+        NUM_FILES=$(echo "$STAGED_FILES" | wc -l | xargs)
+        if [ -n "$SCOPE" ]; then
+            COMMIT_MSG="${COMMIT_TYPE}(${SCOPE}): ahoy! updated $NUM_FILES file(s), arr!"
+        else
+            COMMIT_MSG="${COMMIT_TYPE}: ahoy! updated $NUM_FILES file(s), arr!"
+        fi
     fi
 
     info "Generated commit message: $COMMIT_MSG"
