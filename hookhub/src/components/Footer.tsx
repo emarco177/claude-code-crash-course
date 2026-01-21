@@ -1,3 +1,5 @@
+import Logo from './Logo';
+
 export default function Footer() {
   return (
     <footer className="border-t border-[var(--border)] bg-[var(--background)]">
@@ -6,13 +8,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
           {/* Brand Column */}
           <div className="md:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-[#d97757] flex items-center justify-center">
-                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-                </svg>
-              </div>
-              <span className="text-lg font-semibold text-[var(--foreground)]">HookHub</span>
+            <div className="mb-4">
+              <Logo size="md" showText={true} />
             </div>
             <p className="text-sm text-[var(--slate-light)] leading-relaxed mb-6">
               Discover and share community-driven hooks for Claude Code. Enhance your AI-powered development workflow.

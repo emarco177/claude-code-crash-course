@@ -1,6 +1,7 @@
 import HookCard from '@/components/HookCard';
 import Footer from '@/components/Footer';
 import HeroTerminal from '@/components/heros/HeroTerminal';
+import Logo from '@/components/Logo';
 import { Hook } from '@/types/hook';
 import hooksData from '@/data/hooks.json';
 
@@ -18,14 +19,7 @@ export default function Home() {
       <header className="border-b border-[var(--border)] bg-[var(--background)]/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between gap-6">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-[#d97757] flex items-center justify-center animate-float">
-                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-                </svg>
-              </div>
-              <span className="text-xl font-semibold text-[var(--foreground)]">HookHub</span>
-            </div>
+            <Logo size="md" showText={true} className="animate-float" />
             <div className="flex-1 max-w-md">
               <div className="relative">
                 <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--slate-light)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
