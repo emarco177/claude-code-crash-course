@@ -84,7 +84,7 @@ if [ -z "$1" ]; then
 
     # Use Claude CLI to generate a pirate-style commit message
     info "Arrr! Asking Claude to write a pirate commit message..."
-    PIRATE_MSG=$(claude -p "You are a pirate! Based on this git diff, write a short conventional commit message (type(scope): description) but make the description sound like a pirate talking. Keep it under 72 chars. Only output the commit message, nothing else.
+    PIRATE_MSG=$(claude -p "You are a commanding pirate captain! Based on this git diff, write a short conventional commit message (type(scope): description) but make the description sound like a ship captain giving orders. Use commanding words like 'command', 'order', 'navigate', 'helm', 'steer', 'chart course'. Keep it under 72 chars. Only output the commit message, nothing else.
 
 Commit type: $COMMIT_TYPE
 Scope: $SCOPE
@@ -99,9 +99,9 @@ $DIFF_CONTENT" 2>/dev/null || echo "")
         # Fallback if Claude CLI fails
         NUM_FILES=$(echo "$STAGED_FILES" | wc -l | xargs)
         if [ -n "$SCOPE" ]; then
-            COMMIT_MSG="${COMMIT_TYPE}(${SCOPE}): ahoy! updated $NUM_FILES file(s), arr!"
+            COMMIT_MSG="${COMMIT_TYPE}(${SCOPE}): command to update $NUM_FILES file(s)"
         else
-            COMMIT_MSG="${COMMIT_TYPE}: ahoy! updated $NUM_FILES file(s), arr!"
+            COMMIT_MSG="${COMMIT_TYPE}: command to update $NUM_FILES file(s)"
         fi
     fi
 
