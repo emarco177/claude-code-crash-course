@@ -1,0 +1,1123 @@
+[00:00:01.186] Server  LOG     ✓ Ready in 838ms
+[00:00:17.211] Server  ERROR   ⨯ ./my-app/components/LandingPage.tsx:149:7
+Parsing ecmascript source code failed
+  147 |         </div>
+  148 |       </div>
+> 149 |     </>
+      |       ^
+  150 |   );
+  151 | }
+  152 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./my-app/components/LandingPage.tsx [Client Component Browser]
+    ./my-app/app/page.tsx [Client Component Browser]
+    ./my-app/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./my-app/components/LandingPage.tsx [Client Component SSR]
+    ./my-app/app/page.tsx [Client Component SSR]
+    ./my-app/app/page.tsx [Server Component]
+
+
+[00:00:36.237] Server  LOG     ✓ Compiled in 457ms
+[00:00:41.324] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:41.358] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <LoadingBoundary name="/" loading={null}>
+      <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>
+        <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
+          <RedirectBoundary>
+            <RedirectErrorBoundary router={{...}}>
+              <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} segmentPath={[...]} ...>
+                <SegmentViewNode type="page" pagePath="/my-app/ap...">
+                  <SegmentTrieNode>
+                  <ClientPageRoot Component={function Home} serverProvidedParams={{...}}>
+                    <Home params={Promise} searchParams={Promise}>
+                      <LandingPage>
+                        <div className="min-h-scre...">
+                          <div className="absolute i...">
+                            <div className="rain-conta...">
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "19.721181668713296%"
+-                                 left: "64.9104%"
++                                 animationDelay: "0.8515966130949781s"
++                                 animationDuration: "2.4741254030323105s"
+-                                 animation-delay: "1.33927s"
+-                                 animation-duration: "2.6904s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "40.90978488602466%"
+-                                 left: "31.8134%"
++                                 animationDelay: "0.7789260022445126s"
++                                 animationDuration: "2.410600707903308s"
+-                                 animation-delay: "0.194844s"
+-                                 animation-duration: "2.95199s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "97.61414468714132%"
+-                                 left: "2.34718%"
++                                 animationDelay: "1.3901861021606852s"
++                                 animationDuration: "2.9821093918259924s"
+-                                 animation-delay: "1.31279s"
+-                                 animation-duration: "2.02318s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "19.224279917566367%"
+-                                 left: "46.628%"
++                                 animationDelay: "1.8822384427185563s"
++                                 animationDuration: "2.6412867782362115s"
+-                                 animation-delay: "1.25951s"
+-                                 animation-duration: "2.01796s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "46.91016882739566%"
+-                                 left: "3.49507%"
++                                 animationDelay: "0.008146015195296119s"
++                                 animationDuration: "2.480255247995724s"
+-                                 animation-delay: "1.06041s"
+-                                 animation-duration: "2.71737s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "72.46749114649009%"
+-                                 left: "49.2719%"
++                                 animationDelay: "1.7730677440041849s"
++                                 animationDuration: "2.046600021702935s"
+-                                 animation-delay: "0.467619s"
+-                                 animation-duration: "2.12039s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "82.32496063538981%"
+-                                 left: "59.3018%"
++                                 animationDelay: "1.5269954449958654s"
++                                 animationDuration: "2.2437013610466816s"
+-                                 animation-delay: "1.30817s"
+-                                 animation-duration: "2.03865s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "34.85743571872436%"
+-                                 left: "11.3414%"
++                                 animationDelay: "1.814991130546555s"
++                                 animationDuration: "2.5650926985621867s"
+-                                 animation-delay: "0.146606s"
+-                                 animation-duration: "2.44219s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "47.682547704842904%"
+-                                 left: "93.5246%"
++                                 animationDelay: "1.921499996719223s"
++                                 animationDuration: "2.8802199879225237s"
+-                                 animation-delay: "0.778318s"
+-                                 animation-duration: "2.42059s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "97.97404922826539%"
+-                                 left: "24.2447%"
++                                 animationDelay: "1.0338539181503243s"
++                                 animationDuration: "2.8731461321070295s"
+-                                 animation-delay: "0.904456s"
+-                                 animation-duration: "2.02571s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "41.188695404448886%"
+-                                 left: "64.0501%"
++                                 animationDelay: "0.07398050982566273s"
++                                 animationDuration: "2.469659819018203s"
+-                                 animation-delay: "0.594442s"
+-                                 animation-duration: "2.68567s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "5.1166241264311125%"
+-                                 left: "6.63552%"
++                                 animationDelay: "1.0063447858457029s"
++                                 animationDuration: "2.726374888860266s"
+-                                 animation-delay: "1.00798s"
+-                                 animation-duration: "2.85893s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "60.47113705173107%"
+-                                 left: "51.1599%"
++                                 animationDelay: "0.6608556431422481s"
++                                 animationDuration: "2.0698267071147227s"
+-                                 animation-delay: "1.95951s"
+-                                 animation-duration: "2.34444s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "40.600516023020575%"
+-                                 left: "67.2717%"
++                                 animationDelay: "1.0886857484799053s"
++                                 animationDuration: "2.4832459199307015s"
+-                                 animation-delay: "1.33989s"
+-                                 animation-duration: "2.20032s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "78.47403548817823%"
+-                                 left: "3.34063%"
++                                 animationDelay: "1.121811446520535s"
++                                 animationDuration: "2.558653209563971s"
+-                                 animation-delay: "0.177463s"
+-                                 animation-duration: "2.37537s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "83.33380025610649%"
+-                                 left: "46.9024%"
++                                 animationDelay: "0.5486574437673413s"
++                                 animationDuration: "2.2013132129336657s"
+-                                 animation-delay: "0.844146s"
+-                                 animation-duration: "2.90519s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "17.55609927977354%"
+-                                 left: "11.2229%"
++                                 animationDelay: "1.000640779195741s"
++                                 animationDuration: "2.355044598693057s"
+-                                 animation-delay: "1.24741s"
+-                                 animation-duration: "2.61412s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "9.514436250128867%"
+-                                 left: "51.216%"
++                                 animationDelay: "1.6883727560195043s"
++                                 animationDuration: "2.6443906299269915s"
+-                                 animation-delay: "0.337071s"
+-                                 animation-duration: "2.92227s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "6.658010831059946%"
+-                                 left: "27.184%"
++                                 animationDelay: "0.037246153899296974s"
++                                 animationDuration: "2.5858351589238167s"
+-                                 animation-delay: "1.59928s"
+-                                 animation-duration: "2.72181s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "61.27998893444779%"
+-                                 left: "66.2697%"
++                                 animationDelay: "1.6286558745739512s"
++                                 animationDuration: "2.6654306532840346s"
+-                                 animation-delay: "1.52081s"
+-                                 animation-duration: "2.00848s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "7.911651508520102%"
+-                                 left: "93.4472%"
++                                 animationDelay: "1.5613862217962393s"
++                                 animationDuration: "2.9194373157718987s"
+-                                 animation-delay: "1.2909s"
+-                                 animation-duration: "2.00653s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "69.62465786029941%"
+-                                 left: "3.72612%"
++                                 animationDelay: "0.3473743099453819s"
++                                 animationDuration: "2.5039961483823756s"
+-                                 animation-delay: "0.746314s"
+-                                 animation-duration: "2.12897s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "62.35031126681616%"
+-                                 left: "62.1428%"
++                                 animationDelay: "1.0268312971719529s"
++                                 animationDuration: "2.1781895390868824s"
+-                                 animation-delay: "0.0164215s"
+-                                 animation-duration: "2.25042s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "17.117637634601923%"
+-                                 left: "73.9974%"
++                                 animationDelay: "1.5418548016627902s"
++                                 animationDuration: "2.6851682969974s"
+-                                 animation-delay: "1.16169s"
+-                                 animation-duration: "2.15113s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "14.379886487673355%"
+-                                 left: "59.5696%"
++                                 animationDelay: "0.23988189269958426s"
++                                 animationDuration: "2.143806233398342s"
+-                                 animation-delay: "0.691148s"
+-                                 animation-duration: "2.64963s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "28.58774006805389%"
+-                                 left: "99.712%"
++                                 animationDelay: "1.283803889224709s"
++                                 animationDuration: "2.000154605816947s"
+-                                 animation-delay: "1.46973s"
+-                                 animation-duration: "2.446s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "93.265703814405%"
+-                                 left: "71.0237%"
++                                 animationDelay: "0.5809678180009619s"
++                                 animationDuration: "2.9211044680894895s"
+-                                 animation-delay: "0.626696s"
+-                                 animation-duration: "2.8951s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "72.45146152149366%"
+-                                 left: "36.7548%"
++                                 animationDelay: "0.9571829216460448s"
++                                 animationDuration: "2.9942328024105365s"
+-                                 animation-delay: "0.430765s"
+-                                 animation-duration: "2.13005s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "61.03814953299188%"
+-                                 left: "66.8558%"
++                                 animationDelay: "1.4494228020826472s"
++                                 animationDuration: "2.3015428078190583s"
+-                                 animation-delay: "0.393465s"
+-                                 animation-duration: "2.27864s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "53.43939645558168%"
+-                                 left: "73.8357%"
++                                 animationDelay: "1.3373385507817397s"
++                                 animationDuration: "2.3850010938124164s"
+-                                 animation-delay: "0.90373s"
+-                                 animation-duration: "2.82663s"
+                                }}
+                              >
+                          ...
+                        ...
+                ...
+              ...
+
+[00:02:07.166] Server  LOG     ✓ Compiled in 196ms
+[00:02:10.449] Server  LOG     ✓ Compiled in 92ms
+[00:02:14.919] Server  LOG     ✓ Compiled in 87ms
+[00:02:21.285] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:21.465] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <LoadingBoundary name="/" loading={null}>
+      <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>
+        <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
+          <RedirectBoundary>
+            <RedirectErrorBoundary router={{...}}>
+              <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} segmentPath={[...]} ...>
+                <SegmentViewNode type="page" pagePath="/my-app/ap...">
+                  <SegmentTrieNode>
+                  <ClientPageRoot Component={function Home} serverProvidedParams={{...}}>
+                    <Home params={Promise} searchParams={Promise}>
+                      <LandingPage>
+                        <div className="min-h-scre...">
+                          <div className="absolute i...">
+                            <div className="rain-conta...">
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "98.47290981714585%"
+-                                 left: "46.6453%"
++                                 animationDelay: "0.6963571398910815s"
++                                 animationDuration: "2.753833341322019s"
+-                                 animation-delay: "1.271s"
+-                                 animation-duration: "2.5633s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "48.627530301342006%"
+-                                 left: "30.7777%"
++                                 animationDelay: "1.2521908550994196s"
++                                 animationDuration: "2.6286243781626926s"
+-                                 animation-delay: "1.73792s"
+-                                 animation-duration: "2.58179s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "72.66214763104826%"
+-                                 left: "83.3925%"
++                                 animationDelay: "0.9291347079113741s"
++                                 animationDuration: "2.0954161679899843s"
+-                                 animation-delay: "0.368914s"
+-                                 animation-duration: "2.32712s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "70.09708722802624%"
+-                                 left: "50.0464%"
++                                 animationDelay: "1.0453374821887838s"
++                                 animationDuration: "2.735555475086667s"
+-                                 animation-delay: "0.531303s"
+-                                 animation-duration: "2.42709s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "92.29469102699571%"
+-                                 left: "60.8044%"
++                                 animationDelay: "0.387467236795775s"
++                                 animationDuration: "2.1540075515874726s"
+-                                 animation-delay: "0.86433s"
+-                                 animation-duration: "2.05943s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "12.003553300589209%"
+-                                 left: "88.5651%"
++                                 animationDelay: "1.9394561663199643s"
++                                 animationDuration: "2.382678214020415s"
+-                                 animation-delay: "0.446332s"
+-                                 animation-duration: "2.10077s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "98.18920357686277%"
+-                                 left: "57.9053%"
++                                 animationDelay: "0.09850015323035488s"
++                                 animationDuration: "2.2259571320005986s"
+-                                 animation-delay: "1.80558s"
+-                                 animation-duration: "2.19031s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "95.45052950736277%"
+-                                 left: "55.6123%"
++                                 animationDelay: "1.3101392781277952s"
++                                 animationDuration: "2.964221077621529s"
+-                                 animation-delay: "0.692367s"
+-                                 animation-duration: "2.94272s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "9.437862471633807%"
+-                                 left: "21.571%"
++                                 animationDelay: "1.0998073538941127s"
++                                 animationDuration: "2.8825996467440467s"
+-                                 animation-delay: "0.118995s"
+-                                 animation-duration: "2.62841s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "13.193730122817781%"
+-                                 left: "27.8802%"
++                                 animationDelay: "1.9906747927694555s"
++                                 animationDuration: "2.4296757816184584s"
+-                                 animation-delay: "1.89937s"
+-                                 animation-duration: "2.84404s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "2.7170489436185274%"
+-                                 left: "48.6449%"
++                                 animationDelay: "0.6882985113825508s"
++                                 animationDuration: "2.42692635183383s"
+-                                 animation-delay: "1.35609s"
+-                                 animation-duration: "2.51316s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "13.50808520924095%"
+-                                 left: "6.51875%"
++                                 animationDelay: "0.7303157026380089s"
++                                 animationDuration: "2.2120005235406235s"
+-                                 animation-delay: "1.88892s"
+-                                 animation-duration: "2.61372s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "32.420196838487904%"
+-                                 left: "65.3263%"
++                                 animationDelay: "0.46896513620029756s"
++                                 animationDuration: "2.970514725214305s"
+-                                 animation-delay: "1.6552s"
+-                                 animation-duration: "2.59835s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "22.850537209088195%"
+-                                 left: "60.5955%"
++                                 animationDelay: "0.6872607674039974s"
++                                 animationDuration: "2.5009221945568063s"
+-                                 animation-delay: "1.15814s"
+-                                 animation-duration: "2.96358s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "46.70478852137765%"
+-                                 left: "26.7803%"
++                                 animationDelay: "1.491836616161546s"
++                                 animationDuration: "2.2580211811750415s"
+-                                 animation-delay: "0.551138s"
+-                                 animation-duration: "2.09085s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "11.460505504432316%"
+-                                 left: "99.6677%"
++                                 animationDelay: "0.3353325032783172s"
++                                 animationDuration: "2.653410979079182s"
+-                                 animation-delay: "1.80683s"
+-                                 animation-duration: "2.47365s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "81.63223701178278%"
+-                                 left: "10.0179%"
++                                 animationDelay: "0.9185211678752758s"
++                                 animationDuration: "2.0528796505555906s"
+-                                 animation-delay: "1.79662s"
+-                                 animation-duration: "2.68971s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "48.72946760824228%"
+-                                 left: "88.296%"
++                                 animationDelay: "1.1185779553904087s"
++                                 animationDuration: "2.2755247005741768s"
+-                                 animation-delay: "0.223358s"
+-                                 animation-duration: "2.10696s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "47.32229339424606%"
+-                                 left: "67.1356%"
++                                 animationDelay: "1.4404763055952514s"
++                                 animationDuration: "2.3770408191512304s"
+-                                 animation-delay: "1.47351s"
+-                                 animation-duration: "2.32011s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "29.405040463228005%"
+-                                 left: "85.4407%"
++                                 animationDelay: "0.9075084625890946s"
++                                 animationDuration: "2.7120996160154585s"
+-                                 animation-delay: "1.4923s"
+-                                 animation-duration: "2.73222s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "34.95522267643702%"
+-                                 left: "84.6753%"
++                                 animationDelay: "0.49768467295595586s"
++                                 animationDuration: "2.854143349631048s"
+-                                 animation-delay: "1.11215s"
+-                                 animation-duration: "2.08002s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "62.074297478183794%"
+-                                 left: "5.64963%"
++                                 animationDelay: "1.4082112163314435s"
++                                 animationDuration: "2.5882676524086112s"
+-                                 animation-delay: "1.81012s"
+-                                 animation-duration: "2.00503s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "7.820346526162137%"
+-                                 left: "50.4466%"
++                                 animationDelay: "0.940574879732845s"
++                                 animationDuration: "2.4557602521043087s"
+-                                 animation-delay: "1.2356s"
+-                                 animation-duration: "2.62251s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "15.770699297547674%"
+-                                 left: "36.4984%"
++                                 animationDelay: "1.6129039698290224s"
++                                 animationDuration: "2.629024538756175s"
+-                                 animation-delay: "0.00158066s"
+-                                 animation-duration: "2.47338s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "65.73645804262448%"
+-                                 left: "84.6376%"
++                                 animationDelay: "0.783302170275211s"
++                                 animationDuration: "2.9941945311327003s"
+-                                 animation-delay: "0.8526s"
+-                                 animation-duration: "2.51619s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "79.43015478515693%"
+-                                 left: "3.59714%"
++                                 animationDelay: "0.6757162545439548s"
++                                 animationDuration: "2.370174260769015s"
+-                                 animation-delay: "1.9297s"
+-                                 animation-duration: "2.99699s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "53.88633614867617%"
+-                                 left: "32.6546%"
++                                 animationDelay: "0.44193528557822326s"
++                                 animationDuration: "2.910109084854574s"
+-                                 animation-delay: "0.889732s"
+-                                 animation-duration: "2.80754s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "90.06303804387915%"
+-                                 left: "16.1715%"
++                                 animationDelay: "1.4316841896587202s"
++                                 animationDuration: "2.1159818528650427s"
+-                                 animation-delay: "0.374113s"
+-                                 animation-duration: "2.62041s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "48.25290224812392%"
+-                                 left: "61.6248%"
++                                 animationDelay: "1.9706014637317968s"
++                                 animationDuration: "2.0658839453938667s"
+-                                 animation-delay: "1.88693s"
+-                                 animation-duration: "2.05288s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "92.9217458237264%"
+-                                 left: "15.6479%"
++                                 animationDelay: "0.4737185850909502s"
++                                 animationDuration: "2.4612795893735777s"
+-                                 animation-delay: "1.98781s"
+-                                 animation-duration: "2.01379s"
+                                }}
+                              >
+                          ...
+                        ...
+                ...
+              ...
+
+[00:02:46.645] Server  WARN    ⚠ Cross origin request detected from 192.168.0.213 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[00:02:46.710] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:46.946] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <LoadingBoundary name="/" loading={null}>
+      <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>
+        <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
+          <RedirectBoundary>
+            <RedirectErrorBoundary router={{...}}>
+              <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} segmentPath={[...]} ...>
+                <SegmentViewNode type="page" pagePath="/my-app/ap...">
+                  <SegmentTrieNode>
+                  <ClientPageRoot Component={function Home} serverProvidedParams={{...}}>
+                    <Home params={Promise} searchParams={Promise}>
+                      <LandingPage>
+                        <div className="min-h-scre...">
+                          <div className="absolute i...">
+                            <div className="rain-conta...">
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "12.857152825291784%"
+-                                 left: "91.461%"
++                                 animationDelay: "1.4356585138273812s"
++                                 animationDuration: "2.253911118098828s"
+-                                 animation-delay: "0.469033s"
+-                                 animation-duration: "2.20827s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "87.8127465984026%"
+-                                 left: "97.424%"
++                                 animationDelay: "1.9406329036369232s"
++                                 animationDuration: "2.8436747562687072s"
+-                                 animation-delay: "0.812447s"
+-                                 animation-duration: "2.09749s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "77.02392240531353%"
+-                                 left: "1.02677%"
++                                 animationDelay: "1.915382124477231s"
++                                 animationDuration: "2.743185348001399s"
+-                                 animation-delay: "0.522913s"
+-                                 animation-duration: "2.63265s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "46.12373399902139%"
+-                                 left: "68.1986%"
++                                 animationDelay: "0.6744529288512016s"
++                                 animationDuration: "2.705331394840573s"
+-                                 animation-delay: "0.448559s"
+-                                 animation-duration: "2.51116s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "62.12671388926596%"
+-                                 left: "29.3797%"
++                                 animationDelay: "0.05790500058626513s"
++                                 animationDuration: "2.5277407315888545s"
+-                                 animation-delay: "1.18842s"
+-                                 animation-duration: "2.5762s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "44.60631544972926%"
+-                                 left: "93.4%"
++                                 animationDelay: "1.3984027577883447s"
++                                 animationDuration: "2.6924413971362053s"
+-                                 animation-delay: "0.539941s"
+-                                 animation-duration: "2.57925s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "38.171188628408956%"
+-                                 left: "10.6027%"
++                                 animationDelay: "1.9422154803137925s"
++                                 animationDuration: "2.911479525493056s"
+-                                 animation-delay: "0.210676s"
+-                                 animation-duration: "2.97748s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "25.731960687612908%"
+-                                 left: "71.807%"
++                                 animationDelay: "0.015190759181155977s"
++                                 animationDuration: "2.5729262617043975s"
+-                                 animation-delay: "0.0877383s"
+-                                 animation-duration: "2.52013s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "82.5778395048374%"
+-                                 left: "71.9489%"
++                                 animationDelay: "1.8573316749546886s"
++                                 animationDuration: "2.6575932011531167s"
+-                                 animation-delay: "0.526633s"
+-                                 animation-duration: "2.48021s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "29.373491501445905%"
+-                                 left: "83.973%"
++                                 animationDelay: "1.3149755701719812s"
++                                 animationDuration: "2.838893438520028s"
+-                                 animation-delay: "0.163693s"
+-                                 animation-duration: "2.01596s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "61.210547486990855%"
+-                                 left: "20.1887%"
++                                 animationDelay: "1.2681684271673728s"
++                                 animationDuration: "2.3064380641943663s"
+-                                 animation-delay: "0.0657619s"
+-                                 animation-duration: "2.51085s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "14.930891342430597%"
+-                                 left: "62.9435%"
++                                 animationDelay: "0.010864594193045418s"
++                                 animationDuration: "2.9246363397287287s"
+-                                 animation-delay: "1.42149s"
+-                                 animation-duration: "2.57726s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "25.98734718477742%"
+-                                 left: "33.9154%"
++                                 animationDelay: "1.4452910635627336s"
++                                 animationDuration: "2.7261237220866326s"
+-                                 animation-delay: "1.2746s"
+-                                 animation-duration: "2.40537s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "20.31281241730083%"
+-                                 left: "31.9381%"
++                                 animationDelay: "1.4218395278934732s"
++                                 animationDuration: "2.530824068050981s"
+-                                 animation-delay: "0.869645s"
+-                                 animation-duration: "2.53105s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "73.11955137219587%"
+-                                 left: "26.5552%"
++                                 animationDelay: "0.8448034086365788s"
++                                 animationDuration: "2.5772934280190514s"
+-                                 animation-delay: "0.39483s"
+-                                 animation-duration: "2.60691s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "50.37321444250226%"
+-                                 left: "81.1415%"
++                                 animationDelay: "0.8171039779399967s"
++                                 animationDuration: "2.378372375269899s"
+-                                 animation-delay: "1.36556s"
+-                                 animation-duration: "2.63864s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "67.35908557814736%"
+-                                 left: "18.0863%"
++                                 animationDelay: "1.3278051366526558s"
++                                 animationDuration: "2.542719192530629s"
+-                                 animation-delay: "0.112197s"
+-                                 animation-duration: "2.11657s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "47.85666882988322%"
+-                                 left: "68.3521%"
++                                 animationDelay: "0.5576772010443123s"
++                                 animationDuration: "2.442269957089903s"
+-                                 animation-delay: "0.700915s"
+-                                 animation-duration: "2.53614s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "68.96980436458462%"
+-                                 left: "9.09054%"
++                                 animationDelay: "0.24234744783386208s"
++                                 animationDuration: "2.937907144223187s"
+-                                 animation-delay: "1.2471s"
+-                                 animation-duration: "2.33169s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "89.03139889962024%"
+-                                 left: "57.6939%"
++                                 animationDelay: "0.30076222639162675s"
++                                 animationDuration: "2.429286916014717s"
+-                                 animation-delay: "1.40643s"
+-                                 animation-duration: "2.10602s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "0.41663993833258584%"
+-                                 left: "24.3997%"
++                                 animationDelay: "0.5678670744941308s"
++                                 animationDuration: "2.487024570384751s"
+-                                 animation-delay: "0.19504s"
+-                                 animation-duration: "2.22933s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "23.145020718620035%"
+-                                 left: "98.7438%"
++                                 animationDelay: "0.24340399428196569s"
++                                 animationDuration: "2.3107487465797925s"
+-                                 animation-delay: "0.978863s"
+-                                 animation-duration: "2.58896s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "30.447853978057605%"
+-                                 left: "68.4749%"
++                                 animationDelay: "0.2351658608772591s"
++                                 animationDuration: "2.993699273808706s"
+-                                 animation-delay: "0.659058s"
+-                                 animation-duration: "2.60359s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "92.34038647823259%"
+-                                 left: "66.0271%"
++                                 animationDelay: "1.151957155629098s"
++                                 animationDuration: "2.7556358270339967s"
+-                                 animation-delay: "0.814043s"
+-                                 animation-duration: "2.23572s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "84.04942178904396%"
+-                                 left: "38.1202%"
++                                 animationDelay: "1.2676536330019703s"
++                                 animationDuration: "2.4258821124358207s"
+-                                 animation-delay: "1.07674s"
+-                                 animation-duration: "2.75093s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "14.538752030898083%"
+-                                 left: "77.0052%"
++                                 animationDelay: "1.6791605044277105s"
++                                 animationDuration: "2.840500133573837s"
+-                                 animation-delay: "0.235998s"
+-                                 animation-duration: "2.14989s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "14.785684836588974%"
+-                                 left: "37.102%"
++                                 animationDelay: "0.20572612495636555s"
++                                 animationDuration: "2.2286852621614934s"
+-                                 animation-delay: "1.21685s"
+-                                 animation-duration: "2.65989s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "23.24679025281394%"
+-                                 left: "8.2467%"
++                                 animationDelay: "0.4814737408049268s"
++                                 animationDuration: "2.7745955886349294s"
+-                                 animation-delay: "1.6778s"
+-                                 animation-duration: "2.11798s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "2.893054324621691%"
+-                                 left: "72.403%"
++                                 animationDelay: "0.30226085298640903s"
++                                 animationDuration: "2.051168701056572s"
+-                                 animation-delay: "0.653295s"
+-                                 animation-duration: "2.3505s"
+                                }}
+                              >
+                              <div
+                                className="rain-drop"
+                                style={{
++                                 left: "70.39684800516673%"
+-                                 left: "37.1928%"
++                                 animationDelay: "0.6190452483228936s"
++                                 animationDuration: "2.6431314198701443s"
+-                                 animation-delay: "0.162231s"
+-                                 animation-duration: "2.85727s"
+                                }}
+                              >
+                          ...
+                        ...
+                ...
+              ...
+
+[01:07:38.555] Server  ERROR   Error: write EPIPE
+[01:07:38.567] Server  ERROR   ⨯ "uncaughtException:" Error: write EPIPE
+[01:07:38.575] Server  ERROR   ⨯ "uncaughtException: " Error: write EPIPE

@@ -1,0 +1,11 @@
+import 'next/dist/server/node-environment-baseline';
+import 'next/dist/server/node-environment-extensions/error-inspect';
+import 'next/dist/server/node-environment-extensions/console-file';
+import 'next/dist/server/node-environment-extensions/console-exit';
+import 'next/dist/server/node-environment-extensions/console-dim.external';
+import 'next/dist/server/node-environment-extensions/unhandled-rejection';
+import 'next/dist/server/node-environment-extensions/random';
+import 'next/dist/server/node-environment-extensions/date';
+import 'next/dist/server/node-environment-extensions/web-crypto';
+import 'next/dist/server/node-environment-extensions/node-crypto';
+import 'next/dist/server/node-environment-extensions/fast-set-immediate.external';
