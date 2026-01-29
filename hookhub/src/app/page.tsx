@@ -31,23 +31,21 @@ export default function Home() {
         </div>
       </header>
 
+      <section className="bg-gray-100 dark:bg-gray-800 py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+            Enhance Your Claude Code Workflows
+          </h2>
+          <p className="text-gray-600 dark:text-gray-400 text-lg mb-10 max-w-2xl mx-auto">
+            Discover pre-built hooks to extend Claude Code functionality, automate workflows, and implement best practices from the community.
+          </p>
+          <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200">
+            Browse All Hooks
+          </button>
+        </div>
+      </section>
+
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <section className="mb-12">
-          <div className="text-center max-w-3xl mx-auto mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-              Enhance Your Claude Code Workflows
-            </h2>
-            <p className="text-gray-600 dark:text-gray-400 text-lg">
-              Discover pre-built hooks to extend Claude Code functionality, automate workflows, 
-              and implement best practices from the community.
-            </p>
-          </div>
-          <div className="text-center">
-            <button className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200">
-              Browse All Hooks
-            </button>
-          </div>
-        </section>
 
         {featuredHooks.length > 0 && (
           <section className="mb-12">
