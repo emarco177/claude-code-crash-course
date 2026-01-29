@@ -193,23 +193,15 @@ Both projects use:
 - Main branch: `main`
 - Feature branches: Use descriptive names
 - Commit messages: Follow conventional commits format
+# Claude Code Crash Course 🚀
+![Claude Code Banner](/static/banner.png)
 
-## Contributing
+[![Twitter Follow](https://img.shields.io/twitter/follow/EdenMarco177?style=social)](https://twitter.com/EdenMarco177)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![Udemy Course](https://img.shields.io/badge/Claude%20Code%20Udemy%20Course-Coupon%20%2412.99-brightgreen)](https://www.udemy.com/course/claudecode/?referralCode=JAN-2026)
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Run linting and type checks
-5. Submit a pull request
+Welcome to the Claude Code Crash Course! This repository is designed to teach you the fundamentals and advanced concepts of Claude Code, Anthropic's official CLI for AI-powered software development, in a hands-on way.
 
-## License
+## What is Claude Code? 💡
 
-Private repository - All rights reserved.
 
-## Support
-
-For questions or issues, please open an issue in the repository.
-
----
-
-Built with Claude Code 🤖
