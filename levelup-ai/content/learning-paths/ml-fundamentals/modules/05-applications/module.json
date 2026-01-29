@@ -1,0 +1,33 @@
+{
+  "id": "05-applications",
+  "title": "Real-World Applications",
+  "description": "Take ML beyond notebooks with deployment patterns, monitoring, and applied case studies.",
+  "order": 5,
+  "estimatedMinutes": 35,
+  "lessons": [
+    {
+      "slug": "production-readiness",
+      "title": "Production-Ready ML",
+      "order": 1,
+      "contentType": "ARTICLE",
+      "estimatedMinutes": 12,
+      "xpReward": 60
+    },
+    {
+      "slug": "mlops-automation",
+      "title": "MLOps Automation",
+      "order": 2,
+      "contentType": "ARTICLE",
+      "estimatedMinutes": 12,
+      "xpReward": 60
+    },
+    {
+      "slug": "fraud-detection-lab",
+      "title": "Coding Lab: Transaction Anomaly Scoring",
+      "order": 3,
+      "contentType": "CODE_CHALLENGE",
+      "estimatedMinutes": 15,
+      "xpReward": 90
+    }
+  ]
+}

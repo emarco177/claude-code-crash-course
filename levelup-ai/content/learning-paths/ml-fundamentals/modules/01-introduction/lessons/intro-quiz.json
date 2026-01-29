@@ -1,0 +1,112 @@
+{
+  "title": "Module 1: Introduction to ML Quiz",
+  "description": "Test your understanding of machine learning fundamentals",
+  "passingScore": 70,
+  "xpReward": 75,
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What is the main difference between traditional programming and machine learning?",
+      "type": "multiple_choice",
+      "options": [
+        "ML learns patterns from data while traditional programming uses explicit rules",
+        "ML is faster than traditional programming",
+        "Traditional programming can't handle large datasets",
+        "ML doesn't require any programming"
+      ],
+      "correct": 0,
+      "explanation": "In traditional programming, developers write explicit rules. In ML, algorithms learn patterns from data automatically."
+    },
+    {
+      "id": "q2",
+      "question": "Which type of machine learning uses labeled training data?",
+      "type": "multiple_choice",
+      "options": [
+        "Unsupervised Learning",
+        "Supervised Learning",
+        "Reinforcement Learning",
+        "Transfer Learning"
+      ],
+      "correct": 1,
+      "explanation": "Supervised learning requires labeled data where the correct answers (labels) are provided during training."
+    },
+    {
+      "id": "q3",
+      "question": "What are the three core components of every ML system?",
+      "type": "multiple_choice",
+      "options": [
+        "Code, Computer, Cloud",
+        "Data, Model, Algorithm",
+        "Input, Output, Processing",
+        "Training, Testing, Deployment"
+      ],
+      "correct": 1,
+      "explanation": "Every ML system needs: (1) Data to learn from, (2) A model to represent patterns, and (3) An algorithm to optimize the model."
+    },
+    {
+      "id": "q4",
+      "question": "Which ML task would you use to predict house prices based on features like size and location?",
+      "type": "multiple_choice",
+      "options": [
+        "Classification",
+        "Clustering",
+        "Regression",
+        "Reinforcement Learning"
+      ],
+      "correct": 2,
+      "explanation": "Regression is used for predicting continuous numerical values like prices, temperatures, or ages."
+    },
+    {
+      "id": "q5",
+      "question": "What type of learning would be best for grouping customers by purchasing behavior without predefined categories?",
+      "type": "multiple_choice",
+      "options": [
+        "Supervised Classification",
+        "Unsupervised Clustering",
+        "Supervised Regression",
+        "Reinforcement Learning"
+      ],
+      "correct": 1,
+      "explanation": "Unsupervised clustering discovers natural groupings in data without requiring labeled categories."
+    },
+    {
+      "id": "q6",
+      "question": "In reinforcement learning, what does an agent receive after taking an action?",
+      "type": "multiple_choice",
+      "options": [
+        "Training data",
+        "Labels",
+        "Rewards or penalties",
+        "Test cases"
+      ],
+      "correct": 2,
+      "explanation": "Reinforcement learning agents receive rewards (positive) or penalties (negative) as feedback to learn optimal behavior."
+    },
+    {
+      "id": "q7",
+      "question": "Which scenario is best suited for machine learning over traditional programming?",
+      "type": "multiple_choice",
+      "options": [
+        "Calculating the sum of two numbers",
+        "Sorting a list alphabetically",
+        "Recognizing faces in photos",
+        "Converting temperature from Celsius to Fahrenheit"
+      ],
+      "correct": 2,
+      "explanation": "Face recognition involves complex patterns that are too difficult to define with explicit rules, making ML ideal."
+    },
+    {
+      "id": "q8",
+      "question": "What is an example of anomaly detection?",
+      "type": "multiple_choice",
+      "options": [
+        "Predicting next month's sales",
+        "Classifying emails as spam",
+        "Detecting fraudulent credit card transactions",
+        "Recommending products to users"
+      ],
+      "correct": 2,
+      "explanation": "Anomaly detection identifies unusual patterns that deviate from normal behavior, like fraudulent transactions."
+    }
+  ]
+}

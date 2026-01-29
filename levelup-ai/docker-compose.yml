@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: levelup-ai-db
+    restart: always
+    environment:
+      POSTGRES_USER: levelup
+      POSTGRES_PASSWORD: levelup123
+      POSTGRES_DB: levelup_ai
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

@@ -1,0 +1,48 @@
+{
+  "title": "Model Evaluation Quiz",
+  "description": "Check your understanding of metrics, validation, and common pitfalls.",
+  "passingScore": 70,
+  "xpReward": 75,
+  "questions": [
+    {
+      "id": "eval-q1",
+      "question": "Which metric would you optimize for an imbalanced fraud dataset where false negatives are very costly?",
+      "type": "multiple_choice",
+      "options": ["Accuracy", "Precision", "Recall", "Mean Absolute Error"],
+      "correct": 2,
+      "explanation": "Recall measures how many actual positives you captured—critical when missing a fraud case is expensive."
+    },
+    {
+      "id": "eval-q2",
+      "question": "Why do we avoid shuffling when validating time-series models?",
+      "type": "multiple_choice",
+      "options": ["It makes training slower", "Future information could leak into the past", "It reduces the number of folds", "It changes the loss function"],
+      "correct": 1,
+      "explanation": "Shuffling mixes future records into the past, creating leakage that inflates metrics."
+    },
+    {
+      "id": "eval-q3",
+      "question": "What does ROC-AUC measure?",
+      "type": "multiple_choice",
+      "options": ["Model calibration", "Trade-off between precision and recall", "Probability the classifier ranks a positive higher than a negative", "Average absolute error"],
+      "correct": 2,
+      "explanation": "ROC-AUC is the probability that a random positive receives a higher score than a random negative."
+    },
+    {
+      "id": "eval-q4",
+      "question": "How can you detect overfitting when running k-fold CV?",
+      "type": "multiple_choice",
+      "options": ["Training loss is high", "Validation scores vary widely across folds", "Test accuracy is 100%", "Gradient norms blow up"],
+      "correct": 1,
+      "explanation": "Large variance between folds indicates the model is overly sensitive to the training data splits."
+    },
+    {
+      "id": "eval-q5",
+      "question": "You tuned hyperparameters on the validation set. What should you report to stakeholders?",
+      "type": "multiple_choice",
+      "options": ["The best validation score", "Average cross-validation score", "Results on the held-out test set", "Training accuracy"],
+      "correct": 2,
+      "explanation": "Only the final evaluation on the untouched test set reflects real-world performance after tuning."
+    }
+  ]
+}

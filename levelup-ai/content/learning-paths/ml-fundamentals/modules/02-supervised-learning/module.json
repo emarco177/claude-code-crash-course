@@ -1,0 +1,33 @@
+{
+  "id": "02-supervised-learning",
+  "title": "Supervised Learning Essentials",
+  "description": "Dive into the supervised learning workflow from datasets and loss functions to putting your first predictive model into production.",
+  "order": 2,
+  "estimatedMinutes": 50,
+  "lessons": [
+    {
+      "slug": "supervised-overview",
+      "title": "Inside Supervised Learning",
+      "order": 1,
+      "contentType": "ARTICLE",
+      "estimatedMinutes": 12,
+      "xpReward": 60
+    },
+    {
+      "slug": "feature-engineering",
+      "title": "Feature Engineering Playbook",
+      "order": 2,
+      "contentType": "ARTICLE",
+      "estimatedMinutes": 15,
+      "xpReward": 60
+    },
+    {
+      "slug": "linear-regression-lab",
+      "title": "Coding Lab: Build a Linear Regressor",
+      "order": 3,
+      "contentType": "CODE_CHALLENGE",
+      "estimatedMinutes": 20,
+      "xpReward": 90
+    }
+  ]
+}

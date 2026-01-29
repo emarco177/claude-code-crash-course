@@ -1,0 +1,44 @@
+{
+  "title": "Coding Lab: Transaction Anomaly Scoring",
+  "description": "Design a lightweight anomaly score for credit-card transactions using rolling statistics.",
+  "language": "python",
+  "difficulty": "HARD",
+  "objectives": [
+    "Maintain rolling mean and standard deviation per customer",
+    "Return a z-score style anomaly metric",
+    "Flag transactions whose score exceeds a configurable threshold"
+  ],
+  "starterCode": "from collections import deque
+import math
+
+class RollingAnomalyScorer:
+    def __init__(self, window=50):
+        self.window = window
+        self.values = {}  # customer_id -> deque
+
+    def score(self, customer_id, amount, threshold=3.0):
+        history = self.values.setdefault(customer_id, deque(maxlen=self.window))
+        # TODO: compute rolling mean/std dev and return abs(z-score)
+        history.append(amount)
+        return 0.0
+",
+  "tests": [
+    {
+      "name": "Low variance customer",
+      "customer": "123",
+      "series": [20, 22, 19, 21, 20, 18, 400],
+      "threshold": 3.0
+    },
+    {
+      "name": "High spender with gradual drift",
+      "customer": "987",
+      "series": [200, 205, 210, 500, 520, 550],
+      "threshold": 2.5
+    }
+  ],
+  "hints": [
+    "Use Welford's online algorithm to update mean and variance in one pass",
+    "When there is not enough history, return 0 to avoid false alarms",
+    "Expose `window` and `threshold` so product managers can tune sensitivity"
+  ]
+}

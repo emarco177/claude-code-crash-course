@@ -1,0 +1,31 @@
+{
+  "title": "Coding Lab: Build a Linear Regressor",
+  "description": "Implement gradient descent for a univariate linear regression model and evaluate it on a mini housing dataset.",
+  "language": "python",
+  "difficulty": "MEDIUM",
+  "objectives": [
+    "Normalize input features and add a bias term",
+    "Implement gradient descent updates by hand",
+    "Report mean absolute error on held-out samples"
+  ],
+  "starterCode": "import numpy as np\n\nclass LinearRegressor:\n    def __init__(self):\n        self.weights = None\n\n    def fit(self, X, y, lr=0.05, epochs=500):\n        X = self._augment(X)\n        n, d = X.shape\n        self.weights = np.zeros(d)\n        for _ in range(epochs):\n            # TODO: compute predictions, error, gradient and update weights\n            pass\n\n    def predict(self, X):\n        if self.weights is None:\n            raise ValueError(\"Call fit before predict\")\n        X = self._augment(X)\n        return X @ self.weights\n\n    def _augment(self, X):\n        X = np.asarray(X, dtype=float)\n        bias = np.ones((X.shape[0], 1))\n        return np.hstack([bias, X])\n",
+  "tests": [
+    {
+      "name": "Predict price of a 1400 sq ft home",
+      "input": [[1400], [1600], [1700], [1875]],
+      "target": [245000, 312000, 279000, 308000],
+      "sample": [1500]
+    },
+    {
+      "name": "Predict price of an 800 sq ft condo",
+      "input": [[800], [1200], [1500], [2000]],
+      "target": [190000, 230000, 280000, 360000],
+      "sample": [1000]
+    }
+  ],
+  "hints": [
+    "Remember to divide the gradient by n (number of samples)",
+    "MAE = mean(|y_true - y_pred|). Use it to report model quality",
+    "Keep learning rate small (0.01 - 0.1) to avoid divergence"
+  ]
+}

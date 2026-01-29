@@ -1,0 +1,33 @@
+{
+  "id": "04-model-evaluation",
+  "title": "Model Evaluation & Validation",
+  "description": "Master the metrics and validation patterns used to ship trustworthy ML models.",
+  "order": 4,
+  "estimatedMinutes": 40,
+  "lessons": [
+    {
+      "slug": "evaluation-metrics",
+      "title": "Picking the Right Metrics",
+      "order": 1,
+      "contentType": "ARTICLE",
+      "estimatedMinutes": 12,
+      "xpReward": 60
+    },
+    {
+      "slug": "model-validation",
+      "title": "Validation Strategies",
+      "order": 2,
+      "contentType": "ARTICLE",
+      "estimatedMinutes": 13,
+      "xpReward": 60
+    },
+    {
+      "slug": "evaluation-quiz",
+      "title": "Evaluation Quiz",
+      "order": 3,
+      "contentType": "QUIZ",
+      "estimatedMinutes": 10,
+      "xpReward": 75
+    }
+  ]
+}

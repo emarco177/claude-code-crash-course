@@ -1,0 +1,288 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(cuid())
+  clerkId      String   @unique
+  email        String   @unique
+  username     String   @unique
+  displayName  String?
+  avatarUrl    String?
+
+  // Battle/Challenge XP
+  totalXp      Int      @default(0)
+  currentLevel Int      @default(1)
+  battleWins   Int      @default(0)
+  battleLosses Int      @default(0)
+  winStreak    Int      @default(0)
+  bestWinStreak Int     @default(0)
+
+  // Learning XP
+  theoryXp        Int      @default(0)
+  pathsCompleted  Int      @default(0)
+  lessonsCompleted Int     @default(0)
+
+  // Battle relations
+  battles      BattleParticipant[]
+  submissions  CodeSubmission[]
+  achievements UserAchievement[]
+
+  // Learning relations
+  pathEnrollments PathEnrollment[]
+  lessonProgress  LessonProgress[]
+  quizAttempts    QuizAttempt[]
+  subscriptions   Subscription[]
+  featureFlags    FeatureFlag[]
+
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Challenge {
+  id           String     @id @default(cuid())
+  title        String
+  description  String
+  difficulty   String     // "EASY" | "MEDIUM" | "HARD"
+  language     String     // "python" | "typescript"
+  starterCode  String
+  solutionCode String
+  testCases    String     // JSON stringified
+  hints        String     // JSON stringified
+  xpReward     Int        @default(25)
+  tags         String     // comma-separated
+
+  battles      Battle[]
+  submissions  CodeSubmission[]
+
+  createdAt    DateTime   @default(now())
+}
+
+model Battle {
+  id           String        @id @default(cuid())
+  challengeId  String
+  challenge    Challenge     @relation(fields: [challengeId], references: [id])
+  status       String        @default("WAITING") // "WAITING" | "IN_PROGRESS" | "COMPLETED" | "CANCELLED"
+
+  startedAt    DateTime?
+  endedAt      DateTime?
+  duration     Int           @default(300) // seconds
+
+  participants BattleParticipant[]
+
+  createdAt    DateTime      @default(now())
+}
+
+model BattleParticipant {
+  id             String   @id @default(cuid())
+  battleId       String
+  battle         Battle   @relation(fields: [battleId], references: [id])
+  userId         String
+  user           User     @relation(fields: [userId], references: [id])
+
+  code           String?
+  testsPassed    Int      @default(0)
+  testsTotal     Int      @default(0)
+  completionTime Int?     // ms from battle start
+  score          Int      @default(0)
+  rank           Int?     // 1 = winner
+  xpAwarded      Int      @default(0)
+
+  @@unique([battleId, userId])
+}
+
+model CodeSubmission {
+  id            String    @id @default(cuid())
+  userId        String
+  user          User      @relation(fields: [userId], references: [id])
+  challengeId   String
+  challenge     Challenge @relation(fields: [challengeId], references: [id])
+
+  code          String
+  testsPassed   Int
+  testsTotal    Int
+  executionTime Int?
+  passed        Boolean
+
+  createdAt     DateTime  @default(now())
+}
+
+model Achievement {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  description String
+  iconUrl     String
+  xpReward    Int
+
+  users       UserAchievement[]
+}
+
+model UserAchievement {
+  id            String      @id @default(cuid())
+  userId        String
+  achievementId String
+  achievement   Achievement @relation(fields: [achievementId], references: [id])
+  user          User        @relation(fields: [userId], references: [id])
+
+  unlockedAt    DateTime    @default(now())
+
+  @@unique([userId, achievementId])
+}
+
+// ============================================
+// LEARNING SYSTEM MODELS
+// ============================================
+
+model LearningPath {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  description String
+  category    String   // "ML_FUNDAMENTALS", "DEEP_LEARNING", "NLP", etc.
+  difficulty  String   // "BEGINNER", "INTERMEDIATE", "ADVANCED"
+  iconUrl     String?
+  xpReward    Int      @default(500)
+  order       Int      @default(0)
+  isPublished Boolean  @default(false)
+  isPremium   Boolean  @default(false)
+
+  modules     LearningModule[]
+  enrollments PathEnrollment[]
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model LearningModule {
+  id              String       @id @default(cuid())
+  pathId          String
+  path            LearningPath @relation(fields: [pathId], references: [id], onDelete: Cascade)
+  title           String
+  description     String
+  order           Int
+  estimatedMinutes Int        @default(30)
+
+  lessons         Lesson[]
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+}
+
+model Lesson {
+  id              String         @id @default(cuid())
+  moduleId        String
+  module          LearningModule @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  title           String
+  slug            String
+  order           Int
+  contentType     String         // "ARTICLE", "PAPER", "VIDEO", "QUIZ", "CODE_CHALLENGE"
+  content         String         // Markdown or JSON based on contentType
+
+  // For papers
+  paperUrl        String?
+  paperAuthors    String?        // JSON array
+  paperYear       Int?
+
+  estimatedMinutes Int           @default(15)
+  xpReward        Int            @default(50)
+
+  progress        LessonProgress[]
+  quizzes         TheoryQuiz[]
+
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+
+  @@unique([moduleId, slug])
+}
+
+model TheoryQuiz {
+  id              String           @id @default(cuid())
+  lessonId        String?
+  lesson          Lesson?          @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  title           String
+  description     String?
+  questions       String           // JSON array of questions
+  passingScore    Int              @default(70)
+  xpReward        Int              @default(25)
+  attempts        QuizAttempt[]
+  createdAt       DateTime         @default(now())
+}
+
+// ============================================
+// PROGRESS TRACKING MODELS
+// ============================================
+
+model PathEnrollment {
+  id              String       @id @default(cuid())
+  userId          String
+  user            User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  pathId          String
+  path            LearningPath @relation(fields: [pathId], references: [id], onDelete: Cascade)
+  progress        Int          @default(0) // 0-100
+  completedAt     DateTime?
+  currentModuleId String?
+  startedAt       DateTime     @default(now())
+  lastAccessedAt  DateTime     @default(now())
+
+  @@unique([userId, pathId])
+}
+
+model LessonProgress {
+  id              String    @id @default(cuid())
+  userId          String
+  user            User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonId        String
+  lesson          Lesson    @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  status          String    // "NOT_STARTED", "IN_PROGRESS", "COMPLETED"
+  completionTime  Int?      // seconds
+  score           Int?      // for quizzes
+  startedAt       DateTime  @default(now())
+  completedAt     DateTime?
+
+  @@unique([userId, lessonId])
+}
+
+model QuizAttempt {
+  id              String     @id @default(cuid())
+  userId          String
+  user            User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  quizId          String
+  quiz            TheoryQuiz @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  answers         String     // JSON
+  score           Int
+  passed          Boolean
+  timeSpent       Int        // seconds
+  createdAt       DateTime   @default(now())
+}
+
+// ============================================
+// MONETIZATION MODELS (Phase 3+)
+// ============================================
+
+model Subscription {
+  id                    String    @id @default(cuid())
+  userId                String
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  plan                  String    // "FREE", "PRO", "PREMIUM"
+  status                String    // "ACTIVE", "CANCELLED", "TRIAL"
+  stripeCustomerId      String?   @unique
+  stripeSubscriptionId  String?   @unique
+  currentPeriodEnd      DateTime?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+}
+
+model FeatureFlag {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  feature     String   // "PREMIUM_PATHS", "ADVANCED_ANALYTICS", etc.
+  enabled     Boolean  @default(false)
+
+  @@unique([userId, feature])
+}

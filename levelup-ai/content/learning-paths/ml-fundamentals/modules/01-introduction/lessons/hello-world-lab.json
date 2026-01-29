@@ -1,0 +1,26 @@
+{
+  "title": "Coding Lab: Hello World",
+  "description": "Warm up by printing and testing the canonical 'Hello, World!' output.",
+  "language": "python",
+  "difficulty": "EASY",
+  "objectives": [
+    "Define a function named say_hello",
+    "Return the exact phrase 'Hello, World!'",
+    "Practice running a function and reading test failures"
+  ],
+  "starterCode": "def say_hello():\n    \"\"\"Return a warm greeting.\"\"\"\n    # TODO: replace the string below\n    return \"TODO\"\n\nif __name__ == \"__main__\":\n    print(say_hello())\n",
+  "tests": [
+    {
+      "name": "Function returns correct string",
+      "expected": "Hello, World!"
+    },
+    {
+      "name": "Trailing whitespace check",
+      "description": "Ensure there are no extra spaces or punctuation"
+    }
+  ],
+  "hints": [
+    "Capitalization and punctuation must match exactly",
+    "Use return, not print, inside the function"
+  ]
+}

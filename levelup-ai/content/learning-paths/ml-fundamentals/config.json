@@ -1,0 +1,49 @@
+{
+  "slug": "ml-fundamentals",
+  "title": "Machine Learning Fundamentals",
+  "description": "Master the core concepts of machine learning from supervised and unsupervised learning to model evaluation and real-world applications.",
+  "category": "ML_FUNDAMENTALS",
+  "difficulty": "BEGINNER",
+  "iconUrl": "/icons/ml-fundamentals.svg",
+  "xpReward": 500,
+  "order": 1,
+  "isPublished": true,
+  "isPremium": false,
+  "modules": [
+    {
+      "id": "01-introduction",
+      "title": "Introduction to Machine Learning",
+      "description": "Understand what machine learning is and explore its applications",
+      "order": 1,
+      "estimatedMinutes": 30
+    },
+    {
+      "id": "02-supervised-learning",
+      "title": "Supervised Learning",
+      "description": "Learn about classification and regression techniques",
+      "order": 2,
+      "estimatedMinutes": 45
+    },
+    {
+      "id": "03-unsupervised-learning",
+      "title": "Unsupervised Learning",
+      "description": "Explore clustering and dimensionality reduction methods",
+      "order": 3,
+      "estimatedMinutes": 40
+    },
+    {
+      "id": "04-model-evaluation",
+      "title": "Model Evaluation & Validation",
+      "description": "Master techniques for evaluating and improving models",
+      "order": 4,
+      "estimatedMinutes": 35
+    },
+    {
+      "id": "05-applications",
+      "title": "Real-World Applications",
+      "description": "See how ML is applied to solve practical problems",
+      "order": 5,
+      "estimatedMinutes": 30
+    }
+  ]
+}

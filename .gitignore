@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.claude/
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Node
+node_modules/
+package-lock.json
+
+# Next.js
+.next/
+out/
+build/
+dist/
+
+# Environment
+.env
+.env.local

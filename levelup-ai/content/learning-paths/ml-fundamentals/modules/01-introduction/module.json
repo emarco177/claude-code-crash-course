@@ -1,0 +1,49 @@
+{
+  "id": "01-introduction",
+  "title": "Introduction to Machine Learning",
+  "description": "Understand what machine learning is, its types, and explore its applications across different domains.",
+  "order": 1,
+  "estimatedMinutes": 30,
+  "lessons": [
+    {
+      "slug": "what-is-ml",
+      "title": "What is Machine Learning?",
+      "order": 1,
+      "contentType": "ARTICLE",
+      "estimatedMinutes": 10,
+      "xpReward": 50
+    },
+    {
+      "slug": "types-of-learning",
+      "title": "Types of Machine Learning",
+      "order": 2,
+      "contentType": "ARTICLE",
+      "estimatedMinutes": 12,
+      "xpReward": 50
+    },
+    {
+      "slug": "hello-world-lab",
+      "title": "Coding Lab: Hello World",
+      "order": 3,
+      "contentType": "CODE_CHALLENGE",
+      "estimatedMinutes": 6,
+      "xpReward": 40
+    },
+    {
+      "slug": "ml-workflow",
+      "title": "The ML Workflow",
+      "order": 4,
+      "contentType": "ARTICLE",
+      "estimatedMinutes": 8,
+      "xpReward": 50
+    },
+    {
+      "slug": "intro-quiz",
+      "title": "Module 1 Quiz",
+      "order": 5,
+      "contentType": "QUIZ",
+      "estimatedMinutes": 5,
+      "xpReward": 75
+    }
+  ]
+}

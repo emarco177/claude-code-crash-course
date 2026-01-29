@@ -1,0 +1,33 @@
+{
+  "id": "03-unsupervised-learning",
+  "title": "Unsupervised Learning Techniques",
+  "description": "Learn how to discover structure in unlabeled data with clustering, dimensionality reduction, and anomaly detection.",
+  "order": 3,
+  "estimatedMinutes": 45,
+  "lessons": [
+    {
+      "slug": "unsupervised-overview",
+      "title": "Why Unsupervised Learning?",
+      "order": 1,
+      "contentType": "ARTICLE",
+      "estimatedMinutes": 12,
+      "xpReward": 60
+    },
+    {
+      "slug": "clustering-techniques",
+      "title": "Clustering Algorithms Compared",
+      "order": 2,
+      "contentType": "ARTICLE",
+      "estimatedMinutes": 15,
+      "xpReward": 60
+    },
+    {
+      "slug": "kmeans-lab",
+      "title": "Coding Lab: Mini K-Means",
+      "order": 3,
+      "contentType": "CODE_CHALLENGE",
+      "estimatedMinutes": 18,
+      "xpReward": 90
+    }
+  ]
+}
