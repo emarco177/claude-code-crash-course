@@ -32,21 +32,14 @@ export default function Home() {
       </header>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <section className="mb-12">
-          <div className="text-center max-w-3xl mx-auto mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-              Enhance Your Claude Code Workflows
-            </h2>
-            <p className="text-gray-600 dark:text-gray-400 text-lg">
-              Discover pre-built hooks to extend Claude Code functionality, automate workflows, 
-              and implement best practices from the community.
-            </p>
-          </div>
-          <div className="text-center">
-            <button className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200">
-              Browse All Hooks
-            </button>
-          </div>
+        <section className="mb-16 py-12 text-center">
+          <h2 className="text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-4">
+            Claude Code Hooks,<br />
+            <span className="text-blue-600 dark:text-blue-400">ready to use.</span>
+          </h2>
+          <p className="text-gray-500 dark:text-gray-400 text-lg max-w-xl mx-auto">
+            Community-built hooks to automate your workflows and extend Claude Code.
+          </p>
         </section>
 
         {featuredHooks.length > 0 && (
