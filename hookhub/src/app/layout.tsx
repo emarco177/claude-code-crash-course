@@ -16,7 +16,7 @@ const lora = Lora({
 
 export const metadata: Metadata = {
   title: "HookHub | Claude Code Hooks",
-  description: "Discover and share Claude Code hooks to enhance your AI-powered development workflows",
+  description: "Discover, share, and remix Claude Code hooks to supercharge your AI-powered development workflows",
 };
 
 export default function RootLayout({
