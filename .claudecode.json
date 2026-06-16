@@ -1,1 +1,3 @@
-{ "prompt": "When making commits, always follow the Conventional Commits specification (e.g., fix: or feat:). Keep summaries under 50 characters."}
+{
+  "prompt": "When making commits, always follow the Conventional Commits specification (e.g., fix: or feat:). Keep summaries under 50 characters."
+}
