@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "hookhub",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "../claude-code-crash-course-hookhub/hookhub", "run", "dev", "--", "--port", "3000"],
+      "port": 3000
+    }
+  ]
+}
