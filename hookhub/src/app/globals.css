@@ -193,11 +193,11 @@ button, input, a, nav, header, footer {
 }
 
 .animate-fade-in {
-  animation: fade-in 0.8s ease-out forwards;
+  animation: fade-in 0.8s ease-out both;
 }
 
 .animate-slide-up {
-  animation: slide-up 0.8s ease-out forwards;
+  animation: slide-up 0.8s ease-out both;
 }
 
 .animate-gradient {
@@ -209,11 +209,11 @@ button, input, a, nav, header, footer {
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
+  animation: fadeInUp 0.6s ease-out both;
 }
 
 .animate-slide-in-left {
-  animation: slideInLeft 0.6s ease-out forwards;
+  animation: slideInLeft 0.6s ease-out both;
 }
 
 .animate-pulse-glow {
@@ -260,4 +260,41 @@ button, input, a, nav, header, footer {
 /* Initial state for animated elements */
 .animate-on-scroll {
   opacity: 0;
+}
+
+/* Scroll-triggered reveal (see components/Reveal.tsx) */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal-from-bottom {
+  transform: translateY(24px);
+}
+
+.reveal-from-left {
+  transform: translateX(-24px);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Respect users who ask for less motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }

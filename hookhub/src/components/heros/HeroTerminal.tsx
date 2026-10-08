@@ -1,6 +1,14 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import CountUp from '@/components/CountUp';
+import { prefersReducedMotion } from '@/hooks/useInView';
+
+const outputLines = [
+  'Downloading hook: auto-test',
+  'Installing dependencies...',
+  'Hook installed successfully!',
+];
 
 export default function HeroTerminal() {
   const [typedText, setTypedText] = useState('');
@@ -9,6 +17,12 @@ export default function HeroTerminal() {
   const fullCommand = 'npx hookhub install auto-test';
 
   useEffect(() => {
+    if (prefersReducedMotion()) {
+      setTypedText(fullCommand);
+      setShowOutput(true);
+      return;
+    }
+
     let currentIndex = 0;
     const typingInterval = setInterval(() => {
       if (currentIndex <= fullCommand.length) {
@@ -76,15 +90,15 @@ export default function HeroTerminal() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 pt-8 border-t border-[var(--border)] animate-fade-in animation-delay-600">
               <div>
-                <div className="text-2xl font-bold text-[var(--foreground)] font-mono">50+</div>
+                <CountUp value={50} suffix="+" delay={600} className="block text-2xl font-bold text-[var(--foreground)] font-mono" />
                 <div className="text-sm text-[var(--slate-light)] mt-1">Hooks Available</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-[var(--foreground)] font-mono">1.2k</div>
+                <CountUp value={1.2} decimals={1} suffix="k" delay={600} className="block text-2xl font-bold text-[var(--foreground)] font-mono" />
                 <div className="text-sm text-[var(--slate-light)] mt-1">Downloads</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-[var(--foreground)] font-mono">200+</div>
+                <CountUp value={200} suffix="+" delay={600} className="block text-2xl font-bold text-[var(--foreground)] font-mono" />
                 <div className="text-sm text-[var(--slate-light)] mt-1">Contributors</div>
               </div>
             </div>
@@ -119,12 +133,18 @@ export default function HeroTerminal() {
                   </div>
 
                   {showOutput && (
-                    <div className="space-y-2 animate-fade-in">
-                      <div className="text-[#788c5d]">✓ Downloading hook: auto-test</div>
-                      <div className="text-[#788c5d]">✓ Installing dependencies...</div>
-                      <div className="text-[#788c5d]">✓ Hook installed successfully!</div>
+                    <div className="space-y-2">
+                      {outputLines.map((line, index) => (
+                        <div
+                          key={line}
+                          className="text-[#788c5d] animate-slide-in-left"
+                          style={{ animationDelay: `${index * 350}ms` }}
+                        >
+                          ✓ {line}
+                        </div>
+                      ))}
                       <div className="h-2" />
-                      <div className="text-gray-400 text-xs">
+                      <div className="text-gray-400 text-xs animate-fade-in" style={{ animationDelay: `${outputLines.length * 350}ms` }}>
                         Run <span className="text-[#d97757]">claude-code --help</span> to see available commands
                       </div>
                     </div>

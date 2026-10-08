@@ -1,5 +1,6 @@
 import HookCard from '@/components/HookCard';
 import Footer from '@/components/Footer';
+import Reveal from '@/components/Reveal';
 import HeroTerminal from '@/components/heros/HeroTerminal';
 import { Hook } from '@/types/hook';
 import hooksData from '@/data/hooks.json';
@@ -57,17 +58,17 @@ export default function Home() {
         {/* Featured Hooks */}
         {featuredHooks.length > 0 && (
           <section className="pb-16">
-            <div className="flex items-center gap-3 mb-8 animate-slide-in-left stagger-3 opacity-0">
+            <Reveal from="left" className="flex items-center gap-3 mb-8">
               <div className="w-1 h-6 bg-[#d97757] rounded-full"></div>
               <h2 className="text-xl font-semibold text-[var(--foreground)]">
                 Featured
               </h2>
-            </div>
+            </Reveal>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {featuredHooks.map((hook, index) => (
-                <div key={hook.id} className={`animate-fade-in-up opacity-0 stagger-${Math.min(index + 4, 6)}`}>
+                <Reveal key={hook.id} delay={(index % 3) * 100}>
                   <HookCard hook={hook} />
-                </div>
+                </Reveal>
               ))}
             </div>
           </section>
@@ -75,17 +76,17 @@ export default function Home() {
 
         {/* All Hooks */}
         <section className="pb-20">
-          <div className="flex items-center gap-3 mb-8 animate-slide-in-left stagger-5 opacity-0">
+          <Reveal from="left" className="flex items-center gap-3 mb-8">
             <div className="w-1 h-6 bg-[var(--slate-light)] rounded-full"></div>
             <h2 className="text-xl font-semibold text-[var(--foreground)]">
               All Hooks
             </h2>
-          </div>
+          </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {regularHooks.map((hook, index) => (
-              <div key={hook.id} className={`animate-fade-in-up opacity-0`} style={{ animationDelay: `${0.6 + index * 0.1}s` }}>
+              <Reveal key={hook.id} delay={(index % 3) * 100}>
                 <HookCard hook={hook} />
-              </div>
+              </Reveal>
             ))}
           </div>
         </section>

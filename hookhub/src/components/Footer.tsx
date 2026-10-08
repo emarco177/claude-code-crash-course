@@ -1,3 +1,5 @@
+import Reveal from '@/components/Reveal';
+
 export default function Footer() {
   return (
     <footer className="border-t border-[var(--border)] bg-[var(--background)]">
@@ -5,7 +7,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
           {/* Brand Column */}
-          <div className="md:col-span-1">
+          <Reveal className="md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-8 rounded-lg bg-[#d97757] flex items-center justify-center">
                 <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -53,10 +55,10 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
-          </div>
+          </Reveal>
 
           {/* Resources Column */}
-          <div>
+          <Reveal delay={100}>
             <h3 className="text-sm font-semibold text-[var(--foreground)] uppercase tracking-wider mb-4">Resources</h3>
             <ul className="space-y-3">
               <li>
@@ -80,10 +82,10 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-          </div>
+          </Reveal>
 
           {/* Community Column */}
-          <div>
+          <Reveal delay={200}>
             <h3 className="text-sm font-semibold text-[var(--foreground)] uppercase tracking-wider mb-4">Community</h3>
             <ul className="space-y-3">
               <li>
@@ -107,10 +109,10 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-          </div>
+          </Reveal>
 
           {/* Company Column */}
-          <div>
+          <Reveal delay={300}>
             <h3 className="text-sm font-semibold text-[var(--foreground)] uppercase tracking-wider mb-4">Company</h3>
             <ul className="space-y-3">
               <li>
@@ -134,7 +136,7 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-          </div>
+          </Reveal>
         </div>
       </div>
 
